@@ -1,0 +1,23 @@
+{
+  "name": "remotion-technical-faceless",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Antigravity AI Skill & Starter Kit for Technical & Educational Faceless Motion Graphics",
+  "scripts": {
+    "dev": "remotion preview src/index.ts",
+    "preview": "remotion preview src/index.ts",
+    "render:vertical": "remotion render src/index.ts VerticalExplainer out/vertical.mp4",
+    "render:horizontal": "remotion render src/index.ts HorizontalExplainer out/horizontal.mp4"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.230"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.540",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  }
+}
