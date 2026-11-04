@@ -8,13 +8,19 @@ Didesain khusus untuk kreator konten, developer, dan AI Coding Agent agar dapat 
 
 ## 🌟 Mengapa Memakai Skill Ini?
 
-Kebanyakan video motion buatan AI terasa kaku dan membosankan karena hanya berisi teks berjalan dan bentuk grafis kosong. Skill ini memecahkan masalah tersebut dengan **3 Pilar Utama**:
+Kebanyakan video motion buatan AI terasa kaku dan membosankan karena hanya berisi teks berjalan dan bentuk grafis kosong. Skill ini memecahkan masalah tersebut dengan **5 Pilar Utama Sutradara**:
 
 1. **🎭 Karakter Hidup yang Berakting Nyata (`<CharacterFigure />`)**:
    Bukan sekadar mengayunkan tangan/kaki secara mekanis, karakter memiliki pose pantomim nyata dengan prop objek (laptop crash, hp terjatuh, kaca pembesar, podium selebrasi).
 2. **🏛️ Sistem Hirarki 4-Tier Disiplin**:
    Tata letak baku vertikal yang menjamin **zero overlap** (tidak ada teks atau grafik bertabrakan) dan memiliki proporsi ideal yang ramah layar smartphone.
-3. **📝 Formula Alur Naskah HPMR (Hook-Pain-Mechanism-Reward)**:
+3. **🎧 Audio & Sound Design Langsung di Remotion**:
+   Seluruh arsitektur audio—Voiceover, Dynamic BGM Ducking (`getBgmVolume()`), dan Sound Effect (SFX woosh, pop, ding, thud)—dikelola langsung di Remotion tanpa perlu diedit terpisah di software lain.
+4. **⏱️ Pacing "Jeda Tenang Tapi Tidak Terlalu Lama"**:
+   Golden ratio pergantian adegan **2.5 – 3.5 detik per beat** dengan *micro-breathing* (karakter bernapas halus, partikel debu melayang, camera drift) agar audiens sempat mencerna materi tanpa merasa bosan.
+5. **🌌 Dark Canvas Signature**:
+   Estetika default kanvas gelap pekat (`#0b0f19`) dengan garis vektor putih tegas (*stroke: 6.5px*) dan aksen neon kontras tinggi yang nyaman di mata audiens mobile.
+6. **📝 Formula Alur Naskah HPMR (Hook-Pain-Mechanism-Reward)**:
    Struktur 4 babak teruji psikologi audiens untuk mempertahankan retensi (*watch time*) dari detik pertama hingga akhir video yang me-loop otomatis tanpa jeda.
 
 ---
