@@ -18,8 +18,17 @@ export interface CalculatedTimeline {
   wordCount: number;
 }
 
+export type SfxType = "woosh" | "pop" | "ding" | "thud" | "crash" | "typewriter" | "cash";
+
+export interface SfxCue {
+  type: SfxType;
+  frame: number;
+  volume?: number;
+}
+
 /**
  * Automatically calculates exact frame allocations per scene based on text length.
+ * Enforces the "Jeda Tenang Tapi Tidak Terlalu Lama" golden pacing (2.5s - 3.5s per beat).
  */
 export function calculateTimeline(
   acts: ScriptAct[],
@@ -32,14 +41,14 @@ export function calculateTimeline(
     const words = act.text.trim().split(/\s+/).filter(Boolean);
     const wordCount = words.length;
 
-    // Estimated speech duration in seconds
+    // Estimated speech duration in seconds (min 2.5s for comfortable calm digest)
     const speechDurationSec = Math.max(
       act.minDurationSec || 2.5,
       wordCount / wordsPerSecond
     );
 
-    // Padding for visual breathe & transition (0.5s)
-    const totalDurationFrames = Math.round((speechDurationSec + 0.5) * fps);
+    // Padding for visual breathe & transition (0.5s - 0.8s)
+    const totalDurationFrames = Math.round((speechDurationSec + 0.6) * fps);
 
     const fromFrame = currentFrame;
     const durationInFrames = totalDurationFrames;
@@ -74,3 +83,9 @@ export function getBgmVolume(
   return isSpeaking ? duckedVolume : swellVolume;
 }
 
+/**
+ * Returns whether an SFX should trigger at the given frame
+ */
+export function isSfxTriggered(frame: number, triggerFrame: number, toleranceFrames: number = 1): boolean {
+  return frame >= triggerFrame && frame < triggerFrame + toleranceFrames;
+}

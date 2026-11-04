@@ -27,10 +27,9 @@ Di format Vertikal 9:16 (1080x1920), susunan elemen **WAJIB** mengikuti hirarki 
 │                                               │
 ├───────────────────────────────────────────────┤  Y: 260
 │                                               │
-│                                               │
-│       TIER 2: HERO ACTION STAGE               │  Y: 260 - 1160 (Height: 900px)
+│       TIER 2: HERO ACTION STAGE (900px)       │  Y: 260 - 1160
 │       (Karakter Berinteraksi dengan Prop)     │  • Karakter di atas Garis Lantai Horizontal
-│                                               │  • Prop nyata (Laptop, HP, Kaca Pembesar)
+│                                               │  • Prop nyata (Laptop Rusak, HP, Kaca Pembesar)
 │                                               │  • DILARANG menaruh teks judul di zona ini!
 │                                               │
 ├───────────────────────────────────────────────┤  Y: 1180
@@ -68,6 +67,42 @@ Setiap adegan menggunakan figur pantomim garis tebal (stroke: 6.5–7px) di [`Ch
 5. **`action="celebrate-victory"` (Sistem Pulih & Cuan Mengalir)**:
    - **Kegiatan**: Melompat gembira berulang-ulang (*victory bounce*), kedua tangan terangkat tinggi ke atas (`\o/`), senyum melengkung lebar.
    - **Prop**: Kacamata hitam dengan kilatan garis putih (*glint*), garis lantai hijau berpendar, ikon checklist hijau.
+
+---
+
+## 🎧 HUKUM MUTLAK 3: AUDIO & SFX LANGSUNG DI REMOTION
+> **"Seluruh arsitektur audio—Voiceover, BGM Ducking, dan Sound Effects (SFX)—dikelola langsung di Remotion, bukan diedit terpisah di software lain."**
+
+Gunakan utility di [`src/utils/audioSync.ts`](file:///c:/Users/PANDAWA/Downloads/Skill%20Motion%20Gemini/src/utils/audioSync.ts):
+1. **Voiceover Track**: Ditempatkan presisi menggunakan komponen `<Audio src={voiceoverSrc} />`.
+2. **Dynamic BGM Ducking**: Volume BGM mengecil otomatis saat narator bicara (`volume: 0.08`) dan membuncah (*swell*) di jeda transisi (`volume: 0.26`) via `getBgmVolume()`.
+3. **SFX Trigger Cues**: Setiap animasi penting dipasangkan SFX pada frame yang sama:
+   - `woosh`: Tepat di awal transisi `<WhipPan />` atau `<PortalZoom />`.
+   - `pop`: Saat goresan `<StabiloHighlight />` menyapu kata penting.
+   - `ding`: Saat bohlam ide eureka menyala di atas kepala karakter.
+   - `thud / crash`: Saat laptop/server mengeluarkan error merah atau grafik amblas.
+   - `keyboard`: Saat teks kode di `<CodeTerminal />` mulai mengetik.
+
+---
+
+## ⏱️ HUKUM MUTLAK 4: PACING "JEDA TENANG TAPI TIDAK TERLALU LAMA"
+> **"Jangan membuat transisi secepat kilat (ADHD cuts 0.8s) yang bikin pusing, tapi jangan pula membuat layar diam membosankan. Berikan jeda bernapas yang pas."**
+
+- **Durasi Ideal Per Konsep**: **2.5 – 3.5 detik per beat adegan**. Ini adalah *golden ratio* psikologi tontonan: cukup cepat untuk mempertahankan retensi, cukup tenang untuk memahami isi materi teknis.
+- **Micro-Breathing Selama Jeda**: Layar **tidak pernah freeze/mati total**. Saat karakter sedang diam menjelaskan, elemen mikro tetap hidup:
+  - Karakter memiliki tarikan napas halus (idle bob `4px`).
+  - Kamera melakukan slow-zoom halus (`1.0x -> 1.03x`).
+  - Partikel debu (`<DustParticles />`) tetap melayang pelan di latar.
+
+---
+
+## 🌌 HUKUM MUTLAK 5: DARK CANVAS SIGNATURE
+> **"Default estetika visual adalah Dark Mode pekat, kontras tinggi, dan modern."**
+
+- **Warna Latar**: Menggunakan kanvas gelap pekat (`#0b0f19` atau `#030712`) yang ramah mata di layar OLED mobile.
+- **Garis & Vektor**: Karakter dan objek digambar dengan garis solid putih terang (`#ffffff`) dengan ketebalan tegas (*stroke: 6.5px*).
+- **Aksen Neon**: Aksen warna fokus tinggi (`#06b6d4` cyan, `#f43f5e` rose, `#10b981` emerald, `#f59e0b` amber).
+- **Atmosfer**: Dilengkapi pendaran gradasi aurora lembut (`<AuroraMesh />`) yang berganti warna mengikuti tensi cerita.
 
 ---
 
