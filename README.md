@@ -1,216 +1,153 @@
-# 🎬 Faceless-Skill: Character-Driven Motion Graphics Toolkit
+# Faceless-Skill
 
-> **Skill Resmi Google Antigravity & Starter Kit Remotion (React + TypeScript)** untuk memproduksi video edukasi, teknologi, dan explainer faceless berkualitas tinggi dengan retensi maksimal.
+Motion graphics starter kit dan AI skill untuk membuat video explainer teknis/edukasi menggunakan **Remotion (React & TypeScript)**.
 
-Didesain khusus untuk kreator konten, developer, dan AI Coding Agent agar dapat memproduksi video vertikal **9:16 (TikTok, Reels, Shorts)** dan horizontal **16:9 (YouTube Explainer)** dengan prinsip tata letak disiplin, karakter pantomim ekspresif, dan alur naskah terstruktur.
-
----
-
-## 🌟 Mengapa Memakai Skill Ini?
-
-Kebanyakan video motion buatan AI terasa kaku dan membosankan karena hanya berisi teks berjalan dan bentuk grafis kosong. Skill ini memecahkan masalah tersebut dengan **5 Pilar Utama Sutradara**:
-
-1. **🎭 Karakter Hidup yang Berakting Nyata (`<CharacterFigure />`)**:
-   Bukan sekadar mengayunkan tangan/kaki secara mekanis, karakter memiliki pose pantomim nyata dengan prop objek (laptop crash, hp terjatuh, kaca pembesar, podium selebrasi).
-2. **🏛️ Sistem Hirarki 4-Tier Disiplin**:
-   Tata letak baku vertikal yang menjamin **zero overlap** (tidak ada teks atau grafik bertabrakan) dan memiliki proporsi ideal yang ramah layar smartphone.
-3. **🎧 Audio & Sound Design Langsung di Remotion**:
-   Seluruh arsitektur audio—Voiceover, Dynamic BGM Ducking (`getBgmVolume()`), dan Sound Effect (SFX woosh, pop, ding, thud)—dikelola langsung di Remotion tanpa perlu diedit terpisah di software lain.
-4. **⏱️ Pacing "Jeda Tenang Tapi Tidak Terlalu Lama"**:
-   Golden ratio pergantian adegan **2.5 – 3.5 detik per beat** dengan *micro-breathing* (karakter bernapas halus, partikel debu melayang, camera drift) agar audiens sempat mencerna materi tanpa merasa bosan.
-5. **🌌 Dark Canvas Signature**:
-   Estetika default kanvas gelap pekat (`#0b0f19`) dengan garis vektor putih tegas (*stroke: 6.5px*) dan aksen neon kontras tinggi yang nyaman di mata audiens mobile.
-6. **📝 Formula Alur Naskah HPMR (Hook-Pain-Mechanism-Reward)**:
-   Struktur 4 babak teruji psikologi audiens untuk mempertahankan retensi (*watch time*) dari detik pertama hingga akhir video yang me-loop otomatis tanpa jeda.
+Repositori ini dirancang untuk memproduksi video vertikal **9:16 (TikTok, Reels, Shorts)** maupun horizontal **16:9 (YouTube)** dengan tata letak yang bersih, karakter dengan interaksi objek yang jelas, serta pengaturan audio dan transisi langsung dari kode.
 
 ---
 
-## 🚀 Cara Import & Menggunakan Skill Ini
+## Fitur Utama
 
-Anda dapat menggunakan repositori ini dengan **3 cara**:
+- **Karakter & Prop Interaktif**: Figur vektor minimalis dengan prop nyata (laptop crash, smartphone terjatuh, kaca pembesar, podium selebrasi) sehingga gerakan karakter memiliki konteks cerita yang jelas.
+- **Sistem Grid 4-Tier (Anti Tumpang Tindih)**: Pembagian area vertikal yang disiplin untuk tag konteks, panggung karakter, teks punchline, dan subtitle pill agar tidak ada elemen yang saling menabrak atau terpotong UI mobile.
+- **Audio Langsung di Remotion**: Voiceover, BGM auto-ducking (volume musik mengecil saat narator berbicara), dan penanda trigger SFX (*woosh, pop, ding, thud*) dikontrol langsung lewat timeline frame.
+- **Pacing Terukur (2.5 – 3.5 detik)**: Setiap poin materi diberi jeda yang cukup agar penonton sempat mencerna isi konten, didukung *micro-movements* (kamera drift, debu halus) agar layar tidak terasa diam kaku.
+- **Kanvas Gelap Kontras Tinggi**: Default background gelap (`#0b0f19`) dengan garis putih tegas dan aksen warna neon yang nyaman dilihat di layar ponsel.
+- **Preset Komposisi Siap Pakai**: Termasuk demo visual radar militer, grafik data/candlestick, terminal kode, simulasi chat, koran investigasi, dan mockup perangkat.
 
-### Opsi 1: Sebagai Starter Kit Project Video Baru (Paling Praktis)
-Clone repositori ini untuk langsung memulai project video baru:
+---
+
+## Quick Start
+
+### 1. Jalankan di Komputer Lokal
 
 ```bash
-# 1. Clone repository
-git clone https://github.com/karisprwntcode/Faceless-Skill.git nama-project-kamu
+# Clone repositori
+git clone https://github.com/karisprwntcode/Faceless-Skill.git
+cd Faceless-Skill
 
-# 2. Masuk ke folder project
-cd nama-project-kamu
-
-# 3. Install dependencies
+# Install package
 npm install
 
-# 4. Jalankan Remotion Studio (Preview di Browser)
+# Buka Remotion Studio (Preview di Browser)
 npm run dev
 ```
-Buka browser di `http://localhost:3000` untuk melihat preview interaktif.
 
----
+Buka `http://localhost:3000` di browser untuk memutar dan mengedit komposisi secara interaktif.
 
-### Opsi 2: Import Skill ke Project Antigravity AI yang Sudah Ada
-Jika Anda sudah memiliki project Antigravity dan ingin AI Anda otomatis mewarisi kemampuan membuat motion graphics berkualitas tinggi:
+### 2. Render ke Video MP4
 
-1. Salin folder skill ke root project Anda:
-   ```bash
-   # Salin folder skill ke dalam direktori .agents
-   cp -r .agents/skills/remotion-technical-faceless /path/to/your/project/.agents/skills/
-   ```
-2. Atau salin file [`SKILL.md`](./SKILL.md) langsung ke folder project Anda.
-3. Antigravity AI Anda akan otomatis mendeteksi skill ini dan langsung mematuhi seluruh SOP sutradara saat diminta membuat video motion!
-
----
-
-### Opsi 3: Ambil Komponen ke dalam Project Remotion Anda
-Salin file yang Anda butuhkan ke project Remotion yang sudah berjalan:
-* **Komponen Vektor & Efek**: Salin folder `src/components/` ke project Anda.
-* **Otomasi Audio & Ducking**: Salin `src/utils/audioSync.ts`.
-* **Sistem Warna & Fisika**: Salin `src/styles/theme.ts`.
-
----
-
-## 📐 Tata Letak Baku: Sistem Hirarki 4-Tier (9:16)
-
-Setiap komposisi video vertikal (1080x1920) membagi canvas menjadi 4 zona vertikal tanpa pernah saling bertabrakan:
-
-```
-┌───────────────────────────────────────────────┐  Y: 0
-│                                               │
-│  [ TIER 1: CONTEXT TAG / BREADCRUMB ]         │  Y: 140 - 200 (Font: 20px, Tracking: 3px)
-│                                               │
-├───────────────────────────────────────────────┤  Y: 260
-│                                               │
-│       TIER 2: HERO ACTION STAGE (900px)       │  Y: 260 - 1160
-│       (Karakter Berakting Nyata dengan Prop)  │  • Garis Lantai Horizontal
-│                                               │  • Prop (Laptop Rusak, HP, Kaca Pembesar)
-│                                               │  • DILARANG ADA TEKS JUDUL DI ZONA INI!
-│                                               │
-├───────────────────────────────────────────────┤  Y: 1180
-│                                               │
-│  TIER 3: KINETIC PUNCH HEADLINE (68px)        │  Y: 1220 - 1380
-│  (Wajib DI BAWAH Karakter, BUKAN di atas!)    │  • Dilengkapi Stabilo Highlight Wipe
-│                                               │
-├───────────────────────────────────────────────┤  Y: 1440
-│                                               │
-│  TIER 4: SUBTITLE PILL (Safe Mobile Margin)   │  Y: 1560 - 1640 (Bottom offset: 240px)
-│  (Black Rounded Pill + White Bold Text)       │  • Jarak aman dari tombol UI TikTok/Reels
-│                                               │
-└───────────────────────────────────────────────┘  Y: 1920
-```
-
----
-
-## 🧩 Katalog Komponen Siap Pakai
-
-### 1. Karakter & Akting Nyata ([`CharacterFigure.tsx`](./src/components/CharacterFigure.tsx))
-Figur pantomim garis tebal (*stroke 6.5px*) yang responsif terhadap cerita:
-* `action="panic-headgrab"`: Kedua tangan memegang kepala panik, laptop di sebelahnya crash merah `[X]`.
-* `action="kneel-despair"`: Berlutut lemas di lantai (**pose OTL**), menatap smartphone yang terjatuh di lantai.
-* `action="inspect-magnify"`: Berdiri tegap mengacungkan kaca pembesar raksasa bergaris bidik crosshair `[ + ]`.
-* `action="slumped-laptop"`: Duduk bersandar lemas di keyboard laptop karena kelelahan seharian (`z z Z`).
-* `action="celebrate-victory"`: Melompat gembira, kacamata hitam dengan kilatan garis putih (*glint*), tangan tinggi `\o/`.
-
-### 2. Transisi & Kamera ([`MatchCutTransition.tsx`](./src/components/MatchCutTransition.tsx), [`VirtualCamera.tsx`](./src/components/VirtualCamera.tsx))
-* `<PortalZoom />`: Hyper-zoom eksponensial menembus lensa kaca pembesar langsung ke baris kode.
-* `<WhipPan />`: Cambukan kamera horizontal super cepat untuk pergantian babak dinamis.
-* `<VirtualCamera />`: Efek slow-zoom sinematik & camera shake saat terjadi benturan/crash.
-
-### 3. Teks & Atmosfer ([`StabiloHighlight.tsx`](./src/components/StabiloHighlight.tsx), [`CleanPillSubtitle.tsx`](./src/components/CleanPillSubtitle.tsx))
-* `<StabiloHighlight color={...}>`: Sapuan spidol stabilo neon dinamis pada kata kunci krusial.
-* `<CleanPillSubtitle />`: Subtitle kotak hitam rounded standar industri dengan highlight warna kata per kata.
-* `<DustParticles />`: Partikel debu bercahaya melayang lembut.
-* `<AuroraMesh mood="tense" | "solution" | "curious" />`: Pendaran aura gradasi dinamis.
-
-### 4. Galeri 9 Gaya Visual Khusus
-* `<StickmanFigure />` - Gaya minimalis hitam-putih lelah di laptop.
-* `<TacticalRadarMap />` - Gaya radar militer, scanline CRT, koordinat segitiga Bermuda.
-* `<InfographicBarChart />` - Bar chart pertumbuhan data statistik dengan garis panduan putus-putus.
-* `<BlueprintComparison />` - Kanvas blueprint navy perbandingan sifat sains dua objek.
-* `<FinanceCandlestick />` - Grafik candlestick hijau/merah crypto & ticker live BTC.
-* `<CyberMatrix />` - Terminal hacker, hujan biner hijau, dan port scanning CVE.
-* `<SocialChatSimulator />` - Simulasi chat WhatsApp HP dengan bubble pesan membal.
-* `<NewspaperHeadline />` - Koran vintage investigasi berputar (*slam-in*) dengan stempel `TOP SECRET`.
-* `<DeviceMockup />` - Bodi smartphone melayang dengan analitik aplikasi mobile SaaS.
-
----
-
-## 🤖 Panduan Penggunaan di Berbagai AI (Universal Multi-AI)
-
-Skill ini dibangun di atas standar terbuka **React + Remotion** dan instruksi markdown universal ([`SKILL.md`](./SKILL.md)), sehingga dapat digunakan secara fleksibel di berbagai platform AI favorit Anda:
-
-### 1. 🌌 Google Antigravity (Gemini)
-* **Status**: *Native Auto-Detected* ⚡
-* **Cara Pakai**: Cukup clone repositori ini atau pastikan folder `.agents/skills/remotion-technical-faceless/` ada di root project Anda. Antigravity akan otomatis membaca seluruh SOP sutradara saat Anda memberi instruksi pembuatan video di chat.
-
-### 2. 🧠 Claude (Claude 3.5 Sonnet / Claude Code / Claude Projects)
-* **Claude Code (CLI Terminal)**: Buka terminal di dalam folder project ini dan jalankan perintah `claude`. Claude Code otomatis membaca file `SKILL.md` dan langsung memahami seluruh arsitektur komponen Remotion.
-* **Claude Web (Projects)**:
-  1. Buat Project baru di Claude (contoh: *Motion Graphics Director*).
-  2. Upload file `SKILL.md` dan komponen `src/components/` ke dalam **Project Knowledge**.
-  3. Minta Claude membuat adegan baru di chat, Claude akan menyusun kode React sesuai aturan 4-Tier & pose karakter.
-
-### 3. 💬 ChatGPT (GPT-4o / Custom GPT)
-* **ChatGPT Chat Biasa**: Cukup lampirkan / upload file `SKILL.md` di awal percakapan sebagai referensi panduan sutradara.
-* **Custom GPT**: Buat Custom GPT di menu *Explore GPTs* > *Create*, lalu upload file `SKILL.md` ke bagian **Knowledge**. Beri instruksi: *"Kamu adalah sutradara motion graphics Remotion yang wajib mematuhi seluruh aturan di SKILL.md"*.
-
-### 4. ⚡ AI Code Editors (Cursor, Windsurf, GitHub Copilot)
-* **Cursor**: Buka repositori ini di Cursor. Anda bisa menyalin isi `SKILL.md` ke dalam file `.cursorrules` di root project. Saat menggunakan Cursor Composer (`Ctrl + I` / `Cmd + I`), AI akan otomatis mematuhi safe zone, komponen karakter, dan aturan hirarki 4-tier.
-* **Windsurf**: Tambahkan panduan `SKILL.md` ke dalam *Global Rules* atau file `.windsurfrules`.
-* **GitHub Copilot**: Buka project di VS Code, Copilot Chat akan otomatis membaca konteks dari file yang sedang terbuka (`SKILL.md` & `CharacterFigure.tsx`).
-
----
-
-## 💡 Contoh Prompting ke AI Agent
-
-Setelah meng-import skill ini ke workspace Antigravity Anda, Anda cukup memberikan prompt sederhana dan AI akan otomatis membuat adegan profesional:
-
-```text
-Buatkan video TikTok 9:16 tentang "Kenapa API Kamu Sering Error 504 Saat Trafik Naik".
-Gunakan alur HPMR:
-- Act 1: Developer panik di depan server crash
-- Act 2: Grafik server amblas dan klien komplain
-- Act 3: Bedah masalah dengan kaca pembesar masuk ke kode
-- Act 4: Solusi Redis Caching di terminal
-- Act 5: Selebrasi cuan sistem aman
-Gunakan transisi Portal Zoom dan Stabilo Highlight pada kata kuncinya.
-```
-
----
-
-## 🛠️ Perintah Eksekusi & Render
-
-```powershell
-# Jalankan Live Preview Player di Browser
-npm run dev
-
-# Render Video Vertikal 9:16 (Shorts / Reels / TikTok)
+```bash
+# Render video vertikal 9:16
 npm run render:vertical
 
-# Render Video Horizontal 16:9 (YouTube Explainer)
+# Render video horizontal 16:9
 npm run render:horizontal
 ```
 
+Hasil render akan tersimpan di folder `out/`.
+
 ---
 
-## 📋 Struktur Folder Repositori
+## Penggunaan di Berbagai AI Agent
+
+Repositori ini menyertakan file [`SKILL.md`](./SKILL.md) yang berfungsi sebagai instruksi sistem untuk AI coding agent:
+
+### Google Antigravity (Gemini)
+Letakkan folder ini di workspace Anda atau salin folder `.agents/skills/remotion-technical-faceless/` ke proyek Anda. Antigravity akan otomatis mendeteksi skill ini saat diminta membuat video.
+
+### Cursor / Windsurf
+Buka folder ini di Cursor atau Windsurf. Anda bisa menambahkan isi `SKILL.md` ke dalam file `.cursorrules` atau `.windsurfrules`. Saat Anda meminta pembuatan scene baru lewat composer (`Ctrl + I`), AI akan otomatis mematuhi batas safe zone dan aturan hirarki layout.
+
+### Claude (Claude Code / Claude Projects)
+- **Claude Code (CLI)**: Jalankan perintah `claude` di dalam folder ini. Claude Code akan langsung membaca konteks proyek dan aturan di `SKILL.md`.
+- **Claude Projects**: Buat project baru di web Claude, lalu unggah file `SKILL.md` dan folder `src/components/` ke dalam Project Knowledge.
+
+### ChatGPT (GPT-4o)
+Unggah file `SKILL.md` di awal obrolan, atau masukkan ke dalam Knowledge base jika Anda membuat Custom GPT untuk pembuatan video Remotion.
+
+---
+
+## Panduan Layout Vertikal (9:16)
+
+Agar video tetap rapi di layar smartphone, seluruh komposisi vertikal mengikuti pembagian zona berikut:
+
+| Zona | Rentang Y (1080x1920) | Isi Konten | Catatan |
+| :--- | :--- | :--- | :--- |
+| **Tier 1: Context Tag** | Y: 140 – 200 | Kategori topik atau label adegan (Font ~20px) | Muted, tracking lebar |
+| **Tier 2: Hero Stage** | Y: 260 – 1160 | Karakter + prop objek + garis lantai (Tinggi ~900px) | Tidak boleh ada judul teks di zona ini |
+| **Tier 3: Punchline** | Y: 1220 – 1380 | Teks pertanyaan / poin utama (Font ~68px tebal) | Diletakkan di bawah panggung visual |
+| **Tier 4: Subtitle Pill** | Y: 1560 – 1640 | Pill box subtitle narasi (Offset bawah: 240px) | Jarak aman dari icon/deskripsi TikTok & Reels |
+
+---
+
+## Komponen yang Tersedia
+
+### Karakter & Gestur (`src/components/CharacterFigure.tsx`)
+- `action="panic-headgrab"`: Kedua tangan memegang kepala panik di samping laptop crash berkedip merah.
+- `action="kneel-despair"`: Berlutut lesu di lantai (pose OTL) menatap smartphone yang jatuh.
+- `action="inspect-magnify"`: Berdiri mengacungkan kaca pembesar dengan garis bidik target.
+- `action="slumped-laptop"`: Duduk lemas menempel di keyboard laptop karena kelelahan seharian.
+- `action="celebrate-victory"`: Melompat gembira dengan kacamata hitam dan tangan terangkat ke atas.
+
+### Efek Visual & Transisi (`src/components/`)
+- `<PortalZoom />`: Transisi zoom menembus objek tertentu langsung ke adegan berikutnya.
+- `<WhipPan />`: Transisi geser horizontal cepat dengan motion blur.
+- `<StabiloHighlight />`: Efek sapuan stabilo neon untuk menyorot kata kunci pada teks.
+- `<CleanPillSubtitle />`: Komponen subtitle dengan background rounded gelap dan highlight kata per kata.
+- `<VirtualCamera />`: Efek slow zoom dan camera shake saat adegan benturan/masalah.
+- `<DustParticles />` & `<AuroraMesh />`: Partikel debu melayang dan pendaran gradasi latar belakang.
+
+### Visual Khusus
+- `<StickmanFigure />`: Karakter stickman minimalis hitam-putih.
+- `<CodeTerminal />`: Tampilan terminal kode dengan penomoran baris dan syntax highlighting.
+- `<FinanceCandlestick />`: Visual grafik candlestick naik/turun dan indikator harga.
+- `<TacticalRadarMap />`: Peta radar militer dengan scanline CRT dan garis koordinat.
+- `<InfographicBarChart />`: Diagram batang animasi dengan garis panduan statistik.
+- `<BlueprintComparison />`: Komparasi dua objek dengan gaya grid blueprint sains.
+- `<SocialChatSimulator />`: Tampilan antarmuka pesan chat mobile.
+- `<NewspaperHeadline />`: Koran vintage berputar dengan stempel investigasi.
+- `<DeviceMockup />`: Frame smartphone dengan tampilan antarmuka aplikasi.
+
+---
+
+## Contoh Prompt untuk AI
+
+Jika Anda meminta AI (Cursor/Claude/ChatGPT/Antigravity) membuat video baru menggunakan skill ini, gunakan format instruksi seperti ini:
+
+```text
+Buatkan komposisi baru di src/scenes/ tentang "Kenapa Database Bisa Mengalami Race Condition".
+Format: Vertikal 9:16 (1080x1920), 30fps.
+Ikuti alur berikut:
+1. Act 1 (Hook, 0-3s): Karakter panik (panic-headgrab) di samping server yang overload. Judul: "Database Kamu Sering Korup?".
+2. Act 2 (Pain, 3-7s): Karakter lemas (kneel-despair) karena saldo user salah hitung.
+3. Act 3 (Solusi, 7-11s): Karakter memeriksa masalah (inspect-magnify) dan transisi PortalZoom ke kode.
+4. Act 4 (Terminal, 11-14s): Tampilkan CodeTerminal berisi transaksi atomic / database lock.
+5. Act 5 (Outro, 14-17s): Karakter selebrasi (celebrate-victory) dengan teks kesimpulan.
+Gunakan layout 4-Tier tanpa elemen bertabrakan dan pasang StabiloHighlight pada kata kunci.
+```
+
+---
+
+## Struktur Folder
 
 ```
 ├── .agents/skills/
 │   └── remotion-technical-faceless/
-│       └── SKILL.md            # SOP Sutradara AI Antigravity
-├── references/                 # Standar rasio, kurva fisika, safe zones & naskah
+│       └── SKILL.md          # Instruksi SOP untuk AI
+├── references/               # Panduan teknis (safe zones, kurva animasi, naskah)
 ├── src/
-│   ├── components/             # Seluruh komponen visual, karakter, & transisi
-│   ├── scenes/                 # Komposisi siap pakai (Vertical, Horizontal, Showcase)
-│   ├── styles/theme.ts         # Palet warna dramatis, tipografi, & kurva fisika
-│   ├── utils/audioSync.ts      # Kalkulator alokasi frame & BGM audio ducking
-│   └── Root.tsx                # Registrasi komposisi Remotion
-├── remotion.config.ts          # Konfigurasi Chromium / Chrome lokal
-└── README.md                   # Dokumentasi panduan pengguna
+│   ├── components/           # Kumpulan komponen visual & karakter
+│   ├── scenes/               # Demo skenario video (Vertical, Horizontal, Showcase)
+│   ├── styles/theme.ts       # Definisi warna, font, dan preset fisika spring
+│   ├── utils/audioSync.ts    # Perhitungan timeline durasi & audio ducking
+│   └── Root.tsx              # Pendaftaran composition Remotion
+├── remotion.config.ts        # Konfigurasi browser executable
+└── README.md
 ```
 
 ---
 
-## 📄 Lisensi & Kontribusi
-Dibuat untuk memudahkan siapa saja memproduksi video motion graphics berkualitas tinggi berbasis kode. Silakan fork, adaptasi, dan gunakan untuk project komersial maupun edukasi Anda!
+## Lisensi
+
+Proyek ini menggunakan lisensi MIT. Silakan gunakan, modifikasi, dan adaptasikan untuk kebutuhan konten edukasi maupun komersial Anda.
