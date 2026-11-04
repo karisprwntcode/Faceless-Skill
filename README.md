@@ -129,6 +129,32 @@ Figur pantomim garis tebal (*stroke 6.5px*) yang responsif terhadap cerita:
 
 ---
 
+## 🤖 Panduan Penggunaan di Berbagai AI (Universal Multi-AI)
+
+Skill ini dibangun di atas standar terbuka **React + Remotion** dan instruksi markdown universal ([`SKILL.md`](./SKILL.md)), sehingga dapat digunakan secara fleksibel di berbagai platform AI favorit Anda:
+
+### 1. 🌌 Google Antigravity (Gemini)
+* **Status**: *Native Auto-Detected* ⚡
+* **Cara Pakai**: Cukup clone repositori ini atau pastikan folder `.agents/skills/remotion-technical-faceless/` ada di root project Anda. Antigravity akan otomatis membaca seluruh SOP sutradara saat Anda memberi instruksi pembuatan video di chat.
+
+### 2. 🧠 Claude (Claude 3.5 Sonnet / Claude Code / Claude Projects)
+* **Claude Code (CLI Terminal)**: Buka terminal di dalam folder project ini dan jalankan perintah `claude`. Claude Code otomatis membaca file `SKILL.md` dan langsung memahami seluruh arsitektur komponen Remotion.
+* **Claude Web (Projects)**:
+  1. Buat Project baru di Claude (contoh: *Motion Graphics Director*).
+  2. Upload file `SKILL.md` dan komponen `src/components/` ke dalam **Project Knowledge**.
+  3. Minta Claude membuat adegan baru di chat, Claude akan menyusun kode React sesuai aturan 4-Tier & pose karakter.
+
+### 3. 💬 ChatGPT (GPT-4o / Custom GPT)
+* **ChatGPT Chat Biasa**: Cukup lampirkan / upload file `SKILL.md` di awal percakapan sebagai referensi panduan sutradara.
+* **Custom GPT**: Buat Custom GPT di menu *Explore GPTs* > *Create*, lalu upload file `SKILL.md` ke bagian **Knowledge**. Beri instruksi: *"Kamu adalah sutradara motion graphics Remotion yang wajib mematuhi seluruh aturan di SKILL.md"*.
+
+### 4. ⚡ AI Code Editors (Cursor, Windsurf, GitHub Copilot)
+* **Cursor**: Buka repositori ini di Cursor. Anda bisa menyalin isi `SKILL.md` ke dalam file `.cursorrules` di root project. Saat menggunakan Cursor Composer (`Ctrl + I` / `Cmd + I`), AI akan otomatis mematuhi safe zone, komponen karakter, dan aturan hirarki 4-tier.
+* **Windsurf**: Tambahkan panduan `SKILL.md` ke dalam *Global Rules* atau file `.windsurfrules`.
+* **GitHub Copilot**: Buka project di VS Code, Copilot Chat akan otomatis membaca konteks dari file yang sedang terbuka (`SKILL.md` & `CharacterFigure.tsx`).
+
+---
+
 ## 💡 Contoh Prompting ke AI Agent
 
 Setelah meng-import skill ini ke workspace Antigravity Anda, Anda cukup memberikan prompt sederhana dan AI akan otomatis membuat adegan profesional:
